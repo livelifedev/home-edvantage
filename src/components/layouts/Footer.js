@@ -9,7 +9,9 @@ import {
 function SingleFooterLink({ name, href }) {
   return (
     <NextLink href={href}>
-      <Link pr="6">{name}</Link>
+      <Link pr="6" color="blue.600">
+        {name}
+      </Link>
     </NextLink>
   );
 }
@@ -32,13 +34,13 @@ export default function Footer() {
       </Heading>
       <Box>
         <Link mr="1">
-          <Icon as={AiFillFacebook} boxSize={6} />
+          <Icon as={AiFillFacebook} boxSize={6} color="blue.900" />
         </Link>
         <Link mr="1">
-          <Icon as={AiFillInstagram} boxSize={6} />
+          <Icon as={AiFillInstagram} boxSize={6} color="blue.900" />
         </Link>
         <Link>
-          <Icon as={AiFillTwitterCircle} boxSize={6} />
+          <Icon as={AiFillTwitterCircle} boxSize={6} color="blue.900" />
         </Link>
       </Box>
       <Text fontSize="sm" textAlign="center" pt="14" pb="3">
