@@ -1,16 +1,16 @@
-import { Box } from "@chakra-ui/core";
+import { Flex, Heading } from "@chakra-ui/core";
 import Layout from "../src/components/layouts/Layout";
 
 export default function Home() {
   return (
     <Layout>
       <main>
-        <Box bg="blue.600" h="xs">
-          MAIN
-        </Box>
-        <Box bg="yellow.400" h="sm">
-          MAIN 2
-        </Box>
+        <Flex bg="blue.600" h="sm" align="center" justify="center">
+          <Heading>Leading Text</Heading>
+        </Flex>
+        <Flex bg="yellow.400" h="xl" align="center" justify="center">
+          <Heading>Our Courses</Heading>
+        </Flex>
       </main>
     </Layout>
   );
