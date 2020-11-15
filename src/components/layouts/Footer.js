@@ -9,7 +9,7 @@ import {
 function SingleFooterLink({ name, href }) {
   return (
     <NextLink href={href}>
-      <Link pr="6" color="blue.600">
+      <Link d="inline-block" pr="6" mb="4" color="blue.600">
         {name}
       </Link>
     </NextLink>
@@ -29,7 +29,7 @@ export default function Footer() {
         <SingleFooterLink name="Privacy Policy" href="/" />
         <SingleFooterLink name="Terms & Conditions" href="/" />
       </Box>
-      <Heading as="h5" size="sm" textTransform="uppercase" pt="8" pb="3">
+      <Heading as="h5" size="sm" textTransform="uppercase" pt="4" pb="3">
         Follow Us
       </Heading>
       <Box>

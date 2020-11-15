@@ -3,12 +3,12 @@ import {
   Button,
   Container,
   Divider,
+  Flex,
   Heading,
   Icon,
   Input,
   InputGroup,
   InputLeftElement,
-  SimpleGrid,
 } from "@chakra-ui/react";
 import { BsSearch } from "react-icons/bs";
 import Layout from "../src/components/layouts/Layout";
@@ -16,7 +16,14 @@ import { CATEGORIES } from "../src/utils/constants";
 
 function CategoryCard({ name }) {
   return (
-    <Box borderWidth="1px" borderRadius="md" overflow="hidden">
+    <Box
+      borderWidth="1px"
+      borderRadius="md"
+      overflow="hidden"
+      w="72"
+      mx="4"
+      mb="8"
+    >
       <Box bg="gray.200" w="full" h="40" />
       <Heading as="h5" size="sm" align="center" py="4">
         {name}
@@ -63,11 +70,11 @@ export default function Home() {
               />
               <Input type="search" placeholder="Search in courses" />
             </InputGroup>
-            <SimpleGrid columns="4" spacingX="10" spacingY="5" w="full">
+            <Flex wrap="wrap" justify="center">
               {CATEGORIES.map((x, i) => (
                 <CategoryCard name={x} key={i} />
               ))}
-            </SimpleGrid>
+            </Flex>
           </Container>
           <Divider />
         </Box>
