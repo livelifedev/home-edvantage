@@ -7,7 +7,7 @@ import {
   Container,
   Link,
   Spacer,
-} from "@chakra-ui/core";
+} from "@chakra-ui/react";
 
 function SingleNavLink({ name, href }) {
   return (

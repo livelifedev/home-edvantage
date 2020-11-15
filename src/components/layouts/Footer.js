@@ -1,5 +1,5 @@
 import NextLink from "next/link";
-import { Box, Container, Heading, Icon, Link, Text } from "@chakra-ui/core";
+import { Box, Container, Heading, Icon, Link, Text } from "@chakra-ui/react";
 import {
   AiFillFacebook,
   AiFillInstagram,

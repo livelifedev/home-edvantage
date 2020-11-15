@@ -9,14 +9,19 @@ import {
   InputGroup,
   InputLeftElement,
   SimpleGrid,
-} from "@chakra-ui/core";
+  Divider,
+} from "@chakra-ui/react";
 import { BsSearch } from "react-icons/bs";
 import Layout from "../src/components/layouts/Layout";
+import { CATEGORIES } from "../src/utils/constants";
 
-function CatCard({ name }) {
+function CategoryCard({ name }) {
   return (
-    <Box p={12} shadow="base" borderWidth="1px" borderRadius="md">
-      <Heading fontSize="xl">{name}</Heading>
+    <Box borderWidth="1px" borderRadius="md" overflow="hidden">
+      <Box bg="gray.200" w="full" h="40" />
+      <Heading as="h5" size="sm" align="center" py="4">
+        {name}
+      </Heading>
     </Box>
   );
 }
@@ -41,7 +46,7 @@ export default function Home() {
           </Container>
         </Box>
 
-        <Box bg="yellow.400">
+        <Box>
           <Container
             maxW="xl"
             d="flex"
@@ -52,24 +57,20 @@ export default function Home() {
             pb="40"
           >
             <Heading mb="8">Our Courses</Heading>
-            <InputGroup size="lg" variant="filled" maxW="md" mb="8">
+            <InputGroup size="lg" maxW="md" mb="8">
               <InputLeftElement
                 pointerEvents="none"
-                children={<Icon as={BsSearch} color="gray.300" boxSize={6} />}
+                children={<Icon as={BsSearch} color="gray.300" boxSize="6" />}
               />
               <Input type="search" placeholder="Search in courses" />
             </InputGroup>
-            <SimpleGrid columns={4} spacingX="40px" spacingY="20px" w="100%">
-              <CatCard name="Category" />
-              <CatCard name="Category" />
-              <CatCard name="Category" />
-              <CatCard name="Category" />
-              <CatCard name="Category" />
-              <CatCard name="Category" />
-              <CatCard name="Category" />
-              <CatCard name="Category" />
+            <SimpleGrid columns="4" spacingX="10" spacingY="5" w="full">
+              {CATEGORIES.map((x, i) => (
+                <CategoryCard name={x} key={i} />
+              ))}
             </SimpleGrid>
           </Container>
+          <Divider />
         </Box>
       </main>
     </Layout>
