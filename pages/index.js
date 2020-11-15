@@ -1,20 +1,20 @@
+import NextLink from "next/link";
 import {
   Box,
   Button,
   Container,
-  Divider,
   Flex,
   Heading,
   Icon,
   Input,
   InputGroup,
   InputLeftElement,
+  Link,
 } from "@chakra-ui/react";
 import { BsSearch } from "react-icons/bs";
-import Layout from "../src/components/layouts/Layout";
 import { CATEGORIES } from "../src/utils/constants";
 
-function CategoryCard({ name }) {
+function CategoryCard({ name, href }) {
   return (
     <Box
       borderWidth="1px"
@@ -24,61 +24,62 @@ function CategoryCard({ name }) {
       mx="4"
       mb="8"
     >
-      <Box bg="gray.200" w="full" h="40" />
-      <Heading as="h5" size="sm" align="center" py="4">
-        {name}
-      </Heading>
+      <NextLink href={`/categories/${href}`}>
+        <Link color="blue.600">
+          <Box bg="gray.200" w="full" h="40" />
+          <Heading as="h5" size="sm" align="center" py="4">
+            {name}
+          </Heading>
+        </Link>
+      </NextLink>
     </Box>
   );
 }
 
 export default function Home() {
   return (
-    <Layout>
-      <main>
-        <Box bg="blue.600">
-          <Container
-            maxW="xl"
-            h="sm"
-            d="flex"
-            flexDirection="column"
-            alignItems="center"
-            justifyContent="center"
-          >
-            <Heading color="white" mb="8">
-              Leading Text
-            </Heading>
-            <Button>Get Started</Button>
-          </Container>
-        </Box>
+    <main>
+      <Box bg="blue.600">
+        <Container
+          maxW="xl"
+          h="sm"
+          d="flex"
+          flexDirection="column"
+          alignItems="center"
+          justifyContent="center"
+        >
+          <Heading color="white" mb="8">
+            Leading Text
+          </Heading>
+          <Button>Get Started</Button>
+        </Container>
+      </Box>
 
-        <Box>
-          <Container
-            maxW="xl"
-            d="flex"
-            flexDirection="column"
-            alignItems="center"
-            justifyContent="center"
-            pt="24"
-            pb="40"
-          >
-            <Heading mb="8">Our Courses</Heading>
-            <InputGroup size="lg" maxW="md" mb="8">
-              <InputLeftElement
-                pointerEvents="none"
-                children={<Icon as={BsSearch} color="gray.300" boxSize="6" />}
-              />
-              <Input type="search" placeholder="Search in courses" />
-            </InputGroup>
-            <Flex wrap="wrap" justify="center">
-              {CATEGORIES.map((x, i) => (
-                <CategoryCard name={x} key={i} />
-              ))}
-            </Flex>
-          </Container>
-          <Divider />
-        </Box>
-      </main>
-    </Layout>
+      <Box>
+        <Container
+          maxW="xl"
+          d="flex"
+          flexDirection="column"
+          alignItems="center"
+          justifyContent="center"
+          pt="24"
+          pb="40"
+        >
+          <Heading mb="8">Our Courses</Heading>
+          <InputGroup size="lg" maxW="md" mb="8">
+            <InputLeftElement
+              pointerEvents="none"
+              children={<Icon as={BsSearch} color="gray.300" boxSize="6" />}
+            />
+            <Input type="search" placeholder="Search in courses" />
+          </InputGroup>
+          <Flex wrap="wrap" justify="center">
+            {CATEGORIES.map((x) => (
+              <CategoryCard name={x.name} href={x.id} key={x.id} />
+            ))}
+          </Flex>
+        </Container>
+      </Box>
+    </main>
   );
 }
