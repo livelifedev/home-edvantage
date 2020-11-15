@@ -66,12 +66,12 @@ export default function Home() {
           pb="40"
         >
           <Heading mb="8">Our Courses</Heading>
-          <InputGroup size="lg" maxW="md" mb="8">
+          <InputGroup size="lg" maxW="md" mb="10">
             <InputLeftElement
               pointerEvents="none"
               children={<Icon as={BsSearch} color="gray.300" boxSize="6" />}
             />
-            <Input type="search" placeholder="Search in courses" />
+            <Input type="search" placeholder="Search all courses" />
           </InputGroup>
           <Flex wrap="wrap" justify="center">
             {CATEGORIES.map((x) => (
