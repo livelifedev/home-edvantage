@@ -25,12 +25,17 @@ export default function Nav() {
   return (
     <Box as="nav" boxShadow="base" py="2" pos="relative">
       <Container maxW="xl" d="flex" h="24" alignItems="center">
-        <Image
-          src="/logo.png"
-          alt="Home-Edvantage"
-          width={2326 / 8}
-          height={636 / 8}
-        />
+        <NextLink href="/">
+          <Link>
+            <Image
+              src="/logo.png"
+              alt="Home-Edvantage"
+              width={2326 / 8}
+              height={636 / 8}
+            />
+          </Link>
+        </NextLink>
+
         <Spacer />
 
         <Box
