@@ -2,14 +2,13 @@ import {
   Box,
   Button,
   Container,
-  Flex,
+  Divider,
   Heading,
   Icon,
   Input,
   InputGroup,
   InputLeftElement,
   SimpleGrid,
-  Divider,
 } from "@chakra-ui/react";
 import { BsSearch } from "react-icons/bs";
 import Layout from "../src/components/layouts/Layout";
