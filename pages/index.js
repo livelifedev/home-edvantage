@@ -24,7 +24,7 @@ function CategoryCard({ name, href }) {
       mx="4"
       mb="8"
     >
-      <NextLink href={`/categories/${href}`}>
+      <NextLink href={`/categories/${href}`} passHref>
         <Link color="blue.600">
           <Box bg="gray.200" w="full" h="40" />
           <Heading as="h5" size="sm" align="center" py="4">

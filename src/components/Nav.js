@@ -13,7 +13,7 @@ import { AiOutlineMenu } from "react-icons/ai";
 
 function SingleNavLink({ name, href }) {
   return (
-    <NextLink href={href}>
+    <NextLink href={href} passHref>
       <Link color="blue.600" px="3">
         {name}
       </Link>
@@ -25,7 +25,7 @@ export default function Nav() {
   return (
     <Box as="nav" boxShadow="base" py="2" pos="relative">
       <Container maxW="xl" d="flex" h="24" alignItems="center">
-        <NextLink href="/">
+        <NextLink href="/" passHref>
           <Link>
             <Image
               src="/logo.png"
