@@ -2,7 +2,6 @@ import { useRouter } from "next/router";
 import NextLink from "next/link";
 import {
   Box,
-  Button,
   Container,
   Divider,
   Flex,
@@ -13,6 +12,7 @@ import {
   InputLeftElement,
   Link,
   Select,
+  SimpleGrid,
   Tag,
   Text,
   Wrap,
@@ -23,14 +23,7 @@ import { BsSearch } from "react-icons/bs";
 
 function CourseCard({ name, description, href }) {
   return (
-    <Box
-      borderWidth="1px"
-      borderRadius="md"
-      overflow="hidden"
-      w="72"
-      mx="4"
-      mb="8"
-    >
+    <Box borderWidth="1px" borderRadius="md" overflow="hidden">
       <NextLink href={`/categories/${href}`} passHref>
         <Link color="blue.600">
           <Heading
@@ -102,16 +95,15 @@ export default function Category({ categoryName }) {
 
           <Divider />
 
-          <Flex align="center" justify="space-between" w="full" mt="2">
+          <Flex align="center" justify="space-between" w="full" mt="3" mb="6">
             <Text color="gray.500">Results</Text>
-            <Select placeholder="Select option" w="auto">
-              <option value="option1">Option 1</option>
-              <option value="option2">Option 2</option>
-              <option value="option3">Option 3</option>
+            <Select placeholder="Sort by" w="auto">
+              <option value="title-asc">Title (asc)</option>
+              <option value="title-desc">Title (desc)</option>
             </Select>
           </Flex>
 
-          <Flex wrap="wrap" pt="20">
+          <SimpleGrid columns="4" spacing="4">
             {COURSES.map((x) => (
               <CourseCard
                 name={x.name}
@@ -120,7 +112,7 @@ export default function Category({ categoryName }) {
                 key={x.id}
               />
             ))}
-          </Flex>
+          </SimpleGrid>
         </Container>
       </Box>
     </main>
