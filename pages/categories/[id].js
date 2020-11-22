@@ -103,7 +103,7 @@ export default function Category({ categoryName }) {
             </Select>
           </Flex>
 
-          <SimpleGrid columns="4" spacing="4">
+          <SimpleGrid columns={[1, 2, 3, 4]} spacing="4">
             {COURSES.map((x) => (
               <CourseCard
                 name={x.name}

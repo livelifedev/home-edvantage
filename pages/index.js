@@ -66,7 +66,7 @@ export default function Home() {
             />
             <Input type="search" placeholder="Search all courses" />
           </InputGroup>
-          <SimpleGrid columns={[1, 2, 3, 4]} spacing="8" w="full">
+          <SimpleGrid columns={[1, 2, 3, 4]} spacing="4" w="full">
             {CATEGORIES.map((x) => (
               <CategoryCard name={x.name} href={x.id} key={x.id} />
             ))}
