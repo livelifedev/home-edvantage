@@ -24,7 +24,7 @@ import { BsSearch } from "react-icons/bs";
 function CourseCard({ name, description, href }) {
   return (
     <Box borderWidth="1px" borderRadius="md" overflow="hidden">
-      <NextLink href={`/categories/${href}`} passHref>
+      <NextLink href={`/course/${href}`} passHref>
         <Link color="blue.600">
           <Heading
             as="h5"
@@ -73,49 +73,47 @@ export default function Category({ categoryName }) {
   console.log(router, id);
 
   return (
-    <main>
-      <Box>
-        <Container
-          maxW="xl"
-          d="flex"
-          flexDirection="column"
-          alignItems="center"
-          justifyContent="center"
-          pt="24"
-          pb="40"
-        >
-          <Heading mb="8">{categoryName}</Heading>
-          <InputGroup size="lg" maxW="md" mb="8">
-            <InputLeftElement
-              pointerEvents="none"
-              children={<Icon as={BsSearch} color="gray.300" boxSize="6" />}
+    <Box as="main">
+      <Container
+        maxW="xl"
+        d="flex"
+        flexDirection="column"
+        alignItems="center"
+        justifyContent="center"
+        pt="24"
+        pb="40"
+      >
+        <Heading mb="8">{categoryName}</Heading>
+        <InputGroup size="lg" maxW="md" mb="8">
+          <InputLeftElement
+            pointerEvents="none"
+            children={<Icon as={BsSearch} color="gray.300" boxSize="6" />}
+          />
+          <Input type="search" placeholder="Search in this category" />
+        </InputGroup>
+
+        <Divider />
+
+        <Flex align="center" justify="space-between" w="full" mt="3" mb="6">
+          <Text color="gray.500">Results</Text>
+          <Select placeholder="Sort by" w="auto">
+            <option value="title-asc">Title (asc)</option>
+            <option value="title-desc">Title (desc)</option>
+          </Select>
+        </Flex>
+
+        <SimpleGrid columns={[1, 2, 3, 4]} spacing="4">
+          {COURSES.map((x) => (
+            <CourseCard
+              name={x.name}
+              description={x.description}
+              href={x.id}
+              key={x.id}
             />
-            <Input type="search" placeholder="Search in this category" />
-          </InputGroup>
-
-          <Divider />
-
-          <Flex align="center" justify="space-between" w="full" mt="3" mb="6">
-            <Text color="gray.500">Results</Text>
-            <Select placeholder="Sort by" w="auto">
-              <option value="title-asc">Title (asc)</option>
-              <option value="title-desc">Title (desc)</option>
-            </Select>
-          </Flex>
-
-          <SimpleGrid columns={[1, 2, 3, 4]} spacing="4">
-            {COURSES.map((x) => (
-              <CourseCard
-                name={x.name}
-                description={x.description}
-                href={x.id}
-                key={x.id}
-              />
-            ))}
-          </SimpleGrid>
-        </Container>
-      </Box>
-    </main>
+          ))}
+        </SimpleGrid>
+      </Container>
+    </Box>
   );
 }
 
