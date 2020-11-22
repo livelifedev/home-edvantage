@@ -3,31 +3,24 @@ import {
   Box,
   Button,
   Container,
-  Flex,
   Heading,
   Icon,
   Input,
   InputGroup,
   InputLeftElement,
   Link,
+  SimpleGrid,
 } from "@chakra-ui/react";
 import { BsSearch } from "react-icons/bs";
 import { CATEGORIES } from "../src/utils/constants";
 
 function CategoryCard({ name, href }) {
   return (
-    <Box
-      borderWidth="1px"
-      borderRadius="md"
-      overflow="hidden"
-      w="72"
-      mx="4"
-      mb="8"
-    >
+    <Box borderWidth="1px" borderRadius="md" overflow="hidden">
       <NextLink href={`/categories/${href}`} passHref>
         <Link color="blue.600">
-          <Box bg="gray.200" w="full" h="40" />
-          <Heading as="h5" size="sm" align="center" py="4">
+          <Box bg="gray.200" w="full" h="48" />
+          <Heading as="h5" size="sm" align="center" py="4" px="2">
             {name}
           </Heading>
         </Link>
@@ -73,11 +66,11 @@ export default function Home() {
             />
             <Input type="search" placeholder="Search all courses" />
           </InputGroup>
-          <Flex wrap="wrap" justify="center">
+          <SimpleGrid columns={[1, 2, 3, 4]} spacing="8" w="full">
             {CATEGORIES.map((x) => (
               <CategoryCard name={x.name} href={x.id} key={x.id} />
             ))}
-          </Flex>
+          </SimpleGrid>
         </Container>
       </Box>
     </main>
