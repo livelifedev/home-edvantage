@@ -48,9 +48,28 @@ function CourseCard({ name, description, href }) {
           <Box bg="gray.200" w="full" h="40" />
         </Link>
       </NextLink>
-      <Text color="gray.500" isTruncated noOfLines="2" px="2" py="4">
-        {description}
-      </Text>
+      <Wrap px="2" h="20" d="flex" alignItems="center">
+        <WrapItem>
+          <Tag variant="subtle" colorScheme="yellow">
+            Core Skills
+          </Tag>
+        </WrapItem>
+        <WrapItem>
+          <Tag variant="subtle" colorScheme="yellow">
+            Algebra
+          </Tag>
+        </WrapItem>
+        <WrapItem>
+          <Tag variant="subtle" colorScheme="yellow">
+            Algebra
+          </Tag>
+        </WrapItem>
+        <WrapItem>
+          <Tag variant="subtle" colorScheme="yellow">
+            Algebra
+          </Tag>
+        </WrapItem>
+      </Wrap>
     </Box>
   );
 }
