@@ -8,3 +8,9 @@ export const CATEGORIES = [
   { name: "Selective Placement Training", id: "selective-placment-training" },
   { name: "Opportunity Class Training", id: "opportunity-class-training" },
 ];
+
+export const COURSES = Array.from({ length: 5 }, (v, i) => ({
+  name: `Course ${i + 1}`,
+  id: i,
+  description: "This is the course for this category. It is about this topic.",
+}));

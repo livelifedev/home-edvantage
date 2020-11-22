@@ -13,14 +13,15 @@ import {
   InputLeftElement,
   Link,
   Select,
+  Tag,
   Text,
+  Wrap,
+  WrapItem,
 } from "@chakra-ui/react";
-// import { BsSearch } from "react-icons/bs";
-// import { CATEGORIES } from "../src/utils/constants";
+import { CATEGORIES, COURSES } from "../../src/utils/constants";
 import { BsSearch } from "react-icons/bs";
-import { CATEGORIES } from "../../src/utils/constants";
 
-function CourseCard({ name, href }) {
+function CourseCard({ name, description, href }) {
   return (
     <Box
       borderWidth="1px"
@@ -32,12 +33,24 @@ function CourseCard({ name, href }) {
     >
       <NextLink href={`/categories/${href}`} passHref>
         <Link color="blue.600">
-          <Box bg="gray.200" w="full" h="40" />
-          <Heading as="h5" size="sm" align="center" py="4">
+          <Heading
+            as="h5"
+            size="sm"
+            isTruncated
+            noOfLines="2"
+            px="2"
+            h="16"
+            d="flex"
+            alignItems="center"
+          >
             {name}
           </Heading>
+          <Box bg="gray.200" w="full" h="40" />
         </Link>
       </NextLink>
+      <Text color="gray.500" isTruncated noOfLines="2" px="2" py="4">
+        {description}
+      </Text>
     </Box>
   );
 }
@@ -79,11 +92,16 @@ export default function Category({ categoryName }) {
             </Select>
           </Flex>
 
-          {/* <Flex wrap="wrap" justify="center" pt="20">
-            {CATEGORIES.map((x) => (
-              <CourseCard name={x.name} href={x.id} key={x.id} />
+          <Flex wrap="wrap" pt="20">
+            {COURSES.map((x) => (
+              <CourseCard
+                name={x.name}
+                description={x.description}
+                href={x.id}
+                key={x.id}
+              />
             ))}
-          </Flex> */}
+          </Flex>
         </Container>
       </Box>
     </main>
