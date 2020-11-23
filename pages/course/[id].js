@@ -3,11 +3,15 @@ import NextLink from "next/link";
 import Image from "next/image";
 import {
   Box,
+  Breadcrumb,
+  BreadcrumbItem,
+  BreadcrumbLink,
   Button,
   Container,
   Divider,
   Flex,
   Heading,
+  Icon,
   ListItem,
   SimpleGrid,
   Tag,
@@ -17,7 +21,7 @@ import {
   WrapItem,
 } from "@chakra-ui/react";
 import { CATEGORIES, COURSES } from "../../src/utils/constants";
-import { BsSearch } from "react-icons/bs";
+import { BsChevronRight } from "react-icons/bs";
 
 export default function Course({ categoryName }) {
   const router = useRouter();
@@ -32,9 +36,28 @@ export default function Course({ categoryName }) {
         flexDirection="column"
         alignItems="center"
         justifyContent="center"
-        pt="24"
+        pt="8"
         pb="40"
       >
+        <Breadcrumb
+          color="blue.600"
+          w="full"
+          pb="16"
+          separator={<Icon as={BsChevronRight} pb="1" />}
+        >
+          <BreadcrumbItem>
+            <BreadcrumbLink href="#">Categories</BreadcrumbLink>
+          </BreadcrumbItem>
+
+          <BreadcrumbItem>
+            <BreadcrumbLink href="#">Basic Algebra Skills</BreadcrumbLink>
+          </BreadcrumbItem>
+
+          <BreadcrumbItem isCurrentPage>
+            <BreadcrumbLink href="#">Current</BreadcrumbLink>
+          </BreadcrumbItem>
+        </Breadcrumb>
+
         <Flex justify="space-between" w="full">
           <Heading>Title of Course</Heading>
           <Button colorScheme="blue">Get Course</Button>

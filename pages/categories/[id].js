@@ -2,6 +2,9 @@ import { useRouter } from "next/router";
 import NextLink from "next/link";
 import {
   Box,
+  Breadcrumb,
+  BreadcrumbItem,
+  BreadcrumbLink,
   Container,
   Divider,
   Flex,
@@ -19,7 +22,7 @@ import {
   WrapItem,
 } from "@chakra-ui/react";
 import { CATEGORIES, COURSES } from "../../src/utils/constants";
-import { BsSearch } from "react-icons/bs";
+import { BsChevronRight, BsSearch } from "react-icons/bs";
 
 function CourseCard({ name, description, href }) {
   return (
@@ -80,9 +83,24 @@ export default function Category({ categoryName }) {
         flexDirection="column"
         alignItems="center"
         justifyContent="center"
-        pt="24"
+        pt="8"
         pb="40"
       >
+        <Breadcrumb
+          color="blue.600"
+          w="full"
+          pb="16"
+          separator={<Icon as={BsChevronRight} pb="1" />}
+        >
+          <BreadcrumbItem>
+            <BreadcrumbLink href="#">Categories</BreadcrumbLink>
+          </BreadcrumbItem>
+
+          <BreadcrumbItem isCurrentPage>
+            <BreadcrumbLink href="#">Current</BreadcrumbLink>
+          </BreadcrumbItem>
+        </Breadcrumb>
+
         <Heading mb="8">{categoryName}</Heading>
         <InputGroup size="lg" maxW="md" mb="8">
           <InputLeftElement
