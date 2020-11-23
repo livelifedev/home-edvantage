@@ -39,14 +39,14 @@ export default function Course({ categoryName }) {
         pb="40"
       >
         <Heading mb="8">Title of item</Heading>
-        <SimpleGrid columns={2} spacing={10} w="full">
+        <SimpleGrid columns={2} spacing={10} w="full" templateColumns="2fr 1fr">
           <Box>
             <Heading mb="8">Description</Heading>
             <Text color="gray.500">Results</Text>
             <Heading mb="8">Details</Heading>
             <Text color="gray.500">Results</Text>
           </Box>
-          <Box w="md" h="md" bg="gray.200">
+          <Box w="full" h="md" bg="gray.200">
             {/* <Image
               src="/me.png"
               alt="Picture of the author"
