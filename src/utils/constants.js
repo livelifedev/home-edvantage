@@ -12,5 +12,14 @@ export const CATEGORIES = [
 export const COURSES = Array.from({ length: 5 }, (v, i) => ({
   name: `Course ${i + 1}`,
   id: i,
-  description: "This is the course for this category. It is about this topic.",
+  tags: ["Core Skills", "Maths", "Maths", "Maths", "Maths"],
+  category: CATEGORIES[0],
 }));
+
+export const COURSE = {
+  name: `Course`,
+  id: "0",
+  description: "This is the course for this category. It is about this topic.",
+  tags: ["Core Skills", "Maths", "Maths", "Maths", "Maths"],
+  category: CATEGORIES[0],
+};

@@ -20,10 +20,10 @@ import {
   Wrap,
   WrapItem,
 } from "@chakra-ui/react";
-import { CATEGORIES, COURSES } from "../../src/utils/constants";
+import { COURSES, COURSE } from "../../src/utils/constants";
 import { BsChevronRight } from "react-icons/bs";
 
-export default function Course({ categoryName }) {
+export default function Course({ course }) {
   const router = useRouter();
   const { id } = router.query;
   console.log(router, id);
@@ -46,20 +46,22 @@ export default function Course({ categoryName }) {
           separator={<Icon as={BsChevronRight} pb="1" />}
         >
           <BreadcrumbItem>
-            <BreadcrumbLink href="#">Categories</BreadcrumbLink>
+            <NextLink href="/" passHref>
+              <BreadcrumbLink>Categories</BreadcrumbLink>
+            </NextLink>
           </BreadcrumbItem>
           <BreadcrumbItem>
-            <BreadcrumbLink href="#">Basic Algebra Skills</BreadcrumbLink>
+            <NextLink href={`/categories/${course.category.id}`} passHref>
+              <BreadcrumbLink>{course.category.name}</BreadcrumbLink>
+            </NextLink>
           </BreadcrumbItem>
           <BreadcrumbItem isCurrentPage>
-            <BreadcrumbLink href="#">Current</BreadcrumbLink>
+            <BreadcrumbLink>Current</BreadcrumbLink>
           </BreadcrumbItem>
         </Breadcrumb>
 
         <Flex justify="space-between" w="full" wrap={["wrap", null, "nowrap"]}>
-          <Heading mb={[2, null, 0]}>
-            Title of Course the coolest of the cool
-          </Heading>
+          <Heading mb={[2, null, 0]}>Title of Course</Heading>
           <Button colorScheme="blue" ml={[0, null, 2]}>
             Get Course
           </Button>
@@ -137,18 +139,20 @@ export default function Course({ categoryName }) {
   );
 }
 
-// export async function getStaticPaths() {
-//   const paths = CATEGORIES.map((x) => ({
-//     params: { id: x.id },
-//   }));
+export async function getStaticPaths() {
+  const paths = [
+    {
+      params: { id: COURSE.id },
+    },
+  ];
 
-//   return { paths, fallback: false };
-// }
+  return { paths, fallback: false };
+}
 
-// export async function getStaticProps({ params }) {
-//   const categoryName = CATEGORIES.find((x) => x.id == params.id).name;
+export async function getStaticProps({ params }) {
+  const course = COURSES.find((x) => x.id == params.id);
 
-//   return {
-//     props: { categoryName },
-//   };
-// }
+  return {
+    props: { course },
+  };
+}

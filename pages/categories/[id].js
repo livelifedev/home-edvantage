@@ -1,4 +1,4 @@
-import { useRouter } from "next/router";
+// import { useRouter } from "next/router";
 import NextLink from "next/link";
 import {
   Box,
@@ -24,7 +24,7 @@ import {
 import { CATEGORIES, COURSES } from "../../src/utils/constants";
 import { BsChevronRight, BsSearch } from "react-icons/bs";
 
-function CourseCard({ name, description, href }) {
+function CourseCard({ name, href, tags }) {
   return (
     <Box borderWidth="1px" borderRadius="md" overflow="hidden">
       <NextLink href={`/course/${href}`} passHref>
@@ -45,35 +45,22 @@ function CourseCard({ name, description, href }) {
         </Link>
       </NextLink>
       <Wrap px="2" h="20" d="flex" alignItems="center">
-        <WrapItem>
-          <Tag variant="subtle" colorScheme="yellow">
-            Core Skills
-          </Tag>
-        </WrapItem>
-        <WrapItem>
-          <Tag variant="subtle" colorScheme="yellow">
-            Algebra
-          </Tag>
-        </WrapItem>
-        <WrapItem>
-          <Tag variant="subtle" colorScheme="yellow">
-            Algebra
-          </Tag>
-        </WrapItem>
-        <WrapItem>
-          <Tag variant="subtle" colorScheme="yellow">
-            Algebra
-          </Tag>
-        </WrapItem>
+        {tags.map((tag, i) => (
+          <WrapItem key={i}>
+            <Tag variant="subtle" colorScheme="yellow">
+              {tag}
+            </Tag>
+          </WrapItem>
+        ))}
       </Wrap>
     </Box>
   );
 }
 
 export default function Category({ categoryName }) {
-  const router = useRouter();
-  const { id } = router.query;
-  console.log(router, id);
+  // const router = useRouter();
+  // const { id } = router.query;
+  // console.log(router, id);
 
   return (
     <Box as="main">
@@ -93,11 +80,13 @@ export default function Category({ categoryName }) {
           separator={<Icon as={BsChevronRight} pb="1" />}
         >
           <BreadcrumbItem>
-            <BreadcrumbLink href="#">Categories</BreadcrumbLink>
+            <NextLink href="/" passHref>
+              <BreadcrumbLink>Categories</BreadcrumbLink>
+            </NextLink>
           </BreadcrumbItem>
 
           <BreadcrumbItem isCurrentPage>
-            <BreadcrumbLink href="#">Current</BreadcrumbLink>
+            <BreadcrumbLink>Current</BreadcrumbLink>
           </BreadcrumbItem>
         </Breadcrumb>
 
@@ -122,12 +111,7 @@ export default function Category({ categoryName }) {
 
         <SimpleGrid columns={[1, 2, 3, 4]} spacing="4">
           {COURSES.map((x) => (
-            <CourseCard
-              name={x.name}
-              description={x.description}
-              href={x.id}
-              key={x.id}
-            />
+            <CourseCard name={x.name} href={x.id} key={x.id} tags={x.tags} />
           ))}
         </SimpleGrid>
       </Container>
