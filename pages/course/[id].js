@@ -42,30 +42,36 @@ export default function Course({ categoryName }) {
         <Breadcrumb
           color="blue.600"
           w="full"
-          pb="16"
+          pb={[8, 16]}
           separator={<Icon as={BsChevronRight} pb="1" />}
         >
           <BreadcrumbItem>
             <BreadcrumbLink href="#">Categories</BreadcrumbLink>
           </BreadcrumbItem>
-
           <BreadcrumbItem>
             <BreadcrumbLink href="#">Basic Algebra Skills</BreadcrumbLink>
           </BreadcrumbItem>
-
           <BreadcrumbItem isCurrentPage>
             <BreadcrumbLink href="#">Current</BreadcrumbLink>
           </BreadcrumbItem>
         </Breadcrumb>
 
-        <Flex justify="space-between" w="full">
-          <Heading>Title of Course</Heading>
-          <Button colorScheme="blue">Get Course</Button>
+        <Flex justify="space-between" w="full" wrap={["wrap", null, "nowrap"]}>
+          <Heading mb={[2, null, 0]}>
+            Title of Course the coolest of the cool
+          </Heading>
+          <Button colorScheme="blue" ml={[0, null, 2]}>
+            Get Course
+          </Button>
         </Flex>
 
         <Divider my="8" />
 
-        <SimpleGrid columns={2} spacing={10} w="full" templateColumns="2fr 1fr">
+        <SimpleGrid
+          spacing="10"
+          w="full"
+          templateColumns={["1fr", null, null, "2fr 1fr"]}
+        >
           <Box>
             <Heading mb="4" as="h4" size="md">
               Description
