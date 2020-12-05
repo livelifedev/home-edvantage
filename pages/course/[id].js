@@ -20,7 +20,7 @@ import {
   Wrap,
   WrapItem,
 } from "@chakra-ui/react";
-import { COURSES, COURSE } from "../../src/utils/constants";
+import { COURSES } from "../../src/utils/constants";
 import { BsChevronRight } from "react-icons/bs";
 
 export default function Course({ course }) {
@@ -140,11 +140,9 @@ export default function Course({ course }) {
 }
 
 export async function getStaticPaths() {
-  const paths = [
-    {
-      params: { id: COURSE.id },
-    },
-  ];
+  const paths = COURSES.map((x) => ({
+    params: { id: x.id },
+  }));
 
   return { paths, fallback: false };
 }
