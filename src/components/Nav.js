@@ -46,9 +46,9 @@ export default function Nav() {
           d={["none", null, null, "block"]}
         >
           <SingleNavLink name="Home" href="/" />
-          <SingleNavLink name="About" href="/" />
+          <SingleNavLink name="About" href="/about" />
           <SingleNavLink name="Courses" href="/categories" />
-          <SingleNavLink name="Membership" href="/" />
+          <SingleNavLink name="Membership" href="/membership" />
           <SingleNavLink name="Blog" href="/" />
         </Box>
         <ButtonGroup spacing="1" d={["none", null, null, "inline-flex"]}>

@@ -29,7 +29,7 @@ function CategoryCard({ name, href }) {
   );
 }
 
-export default function Home() {
+export default function Courses() {
   return (
     <main>
       <Box bg="blue.600">
