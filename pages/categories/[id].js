@@ -80,7 +80,7 @@ export default function Category({ categoryName }) {
           separator={<Icon as={BsChevronRight} pb="1" />}
         >
           <BreadcrumbItem>
-            <NextLink href="/" passHref>
+            <NextLink href="/categories" passHref>
               <BreadcrumbLink>Categories</BreadcrumbLink>
             </NextLink>
           </BreadcrumbItem>

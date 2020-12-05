@@ -47,7 +47,7 @@ export default function Nav() {
         >
           <SingleNavLink name="Home" href="/" />
           <SingleNavLink name="About" href="/" />
-          <SingleNavLink name="Courses" href="/" />
+          <SingleNavLink name="Courses" href="/categories" />
           <SingleNavLink name="Membership" href="/" />
           <SingleNavLink name="Blog" href="/" />
         </Box>
