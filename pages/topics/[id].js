@@ -96,7 +96,7 @@ export default function Category({ categoryName }) {
             pointerEvents="none"
             children={<Icon as={BsSearch} color="gray.300" boxSize="6" />}
           />
-          <Input type="search" placeholder="Search in this category" />
+          <Input type="search" placeholder="Search this topic" />
         </InputGroup>
 
         <Divider />
