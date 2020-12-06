@@ -19,9 +19,9 @@ import { CATEGORIES } from "../../src/utils/constants";
 function CategoryCard({ name, href }) {
   return (
     <Box borderWidth="1px" borderRadius="md" overflow="hidden" w="full">
-      <Flex>
-        <Box bg="gray.200" h="72" w="80" flexShrink="0" />
-        <Box py="8" px="4" pos="relative">
+      <Flex direction={["column", null, "row"]}>
+        <Box bg="gray.200" h="72" w={["full", null, 80]} flexShrink="0" />
+        <Box py="8" px="4" pos="relative" h="72">
           <NextLink href={`/topics/${href}`} passHref>
             <Link color="blue.600">
               <Heading as="h3" size="lg" pb="4">
@@ -32,12 +32,13 @@ function CategoryCard({ name, href }) {
           <Text color="gray.500">
             Lorem Ipsum is simply dummy text of the printing and typesetting
             industry. Lorem Ipsum has been the industry's standard dummy text
-            ever since the 1500s, when an unknown printer took a galley of type
-            and scrambled it to make a type specimen book.
+            ever since the 1500s.
           </Text>
-          <Button colorScheme="blue" pos="absolute" bottom="8">
-            Browse Courses
-          </Button>
+          <NextLink href={`/topics/${href}`} passHref>
+            <Button colorScheme="blue" pos="absolute" bottom="8" as="a">
+              Browse Courses
+            </Button>
+          </NextLink>
         </Box>
       </Flex>
     </Box>
