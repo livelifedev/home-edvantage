@@ -46,12 +46,12 @@ export default function Course({ course }) {
           separator={<Icon as={BsChevronRight} pb="1" />}
         >
           <BreadcrumbItem>
-            <NextLink href="/categories" passHref>
-              <BreadcrumbLink>Categories</BreadcrumbLink>
+            <NextLink href="/topics" passHref>
+              <BreadcrumbLink>Topics</BreadcrumbLink>
             </NextLink>
           </BreadcrumbItem>
           <BreadcrumbItem>
-            <NextLink href={`/categories/${course.category.id}`} passHref>
+            <NextLink href={`/topics/${course.category.id}`} passHref>
               <BreadcrumbLink>{course.category.name}</BreadcrumbLink>
             </NextLink>
           </BreadcrumbItem>

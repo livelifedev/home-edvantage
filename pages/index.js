@@ -17,7 +17,7 @@ import { CATEGORIES } from "../src/utils/constants";
 function CategoryCard({ name, href }) {
   return (
     <Box borderWidth="1px" borderRadius="md" overflow="hidden">
-      <NextLink href={`/categories/${href}`} passHref>
+      <NextLink href={`/topics/${href}`} passHref>
         <Link color="blue.600">
           <Box bg="gray.200" w="full" h="48" />
           <Heading as="h5" size="sm" align="center" py="4" px="2">
