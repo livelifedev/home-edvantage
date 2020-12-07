@@ -9,7 +9,7 @@ import {
 function SingleFooterLink({ name, href }) {
   return (
     <NextLink href={href} passHref>
-      <Link d="inline-block" pr="6" mb="4" color="blue.600">
+      <Link d="inline-block" mr="6" mb="4" color="blue.600">
         {name}
       </Link>
     </NextLink>
