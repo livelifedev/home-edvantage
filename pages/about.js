@@ -36,7 +36,7 @@ export default function About() {
           pb="40"
         >
           <Heading mb="8">About Us</Heading>
-          <SimpleGrid columns={3} spacing="8" w="full">
+          <SimpleGrid columns={[1, null, null, 3]} spacing="8" w="full">
             <AboutCard heading="Our Story">
               <Text>
                 Many of the teachers who have been behind this website have
@@ -81,7 +81,7 @@ export default function About() {
               <Text>
                 Our approach to learning uses our three steps – C.A.P.
               </Text>
-              <Box>
+              <Box fontWeight="semibold">
                 <Text>Step 1: Comprehend</Text>
                 <Text>Step 2: Apply</Text>
                 <Text>Step 3: Practice</Text>
@@ -95,7 +95,9 @@ export default function About() {
                 Placement and O.C.
               </Text>
               <Text>We want our students to:</Text>
-              <Text>Learn, Excel & Succeed!</Text>
+              <Text fontWeight="semibold" fontSize="2xl">
+                Learn, Excel & Succeed!
+              </Text>
             </AboutCard>
             <AboutCard heading="Our Service">
               <Text>
@@ -103,7 +105,7 @@ export default function About() {
                 time. As this website grows and our demands increase, we wish to
                 have the following implemented:
               </Text>
-              <UnorderedList w="72">
+              <UnorderedList w="72" pl="1" fontWeight="semibold">
                 <ListItem>Step-by-step tutorials for all courses</ListItem>
                 <ListItem>
                   Specialised Education for Selective Placement and OC
