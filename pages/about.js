@@ -105,7 +105,7 @@ export default function About() {
                 time. As this website grows and our demands increase, we wish to
                 have the following implemented:
               </Text>
-              <UnorderedList w="72" pl="1" fontWeight="semibold">
+              <UnorderedList pl={["4", "8"]} fontWeight="semibold">
                 <ListItem>Step-by-step tutorials for all courses</ListItem>
                 <ListItem>
                   Specialised Education for Selective Placement and OC
