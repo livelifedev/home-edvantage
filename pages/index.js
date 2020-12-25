@@ -10,6 +10,7 @@ import {
   InputLeftElement,
   Link,
   SimpleGrid,
+  Text,
 } from "@chakra-ui/react";
 import { BsSearch } from "react-icons/bs";
 import { CATEGORIES } from "../src/utils/constants";
@@ -40,10 +41,14 @@ export default function Courses() {
           flexDirection="column"
           alignItems="center"
           justifyContent="center"
+          textAlign="center"
         >
-          <Heading color="white" mb="8">
-            Leading Text
+          <Heading as="h1" size="2xl" color="white" mb="4">
+            Take the Home Edvantage for Students
           </Heading>
+          <Text color="white" fontWeight="semibold" mb="8">
+            “The place for students to learn, excel and succeed!”
+          </Text>
           <Button>Get Started</Button>
         </Container>
       </Box>
@@ -57,8 +62,17 @@ export default function Courses() {
           justifyContent="center"
           pt="24"
           pb="40"
+          textAlign="center"
         >
-          <Heading mb="8">Our Courses</Heading>
+          <Heading mb="8">What We Offer</Heading>
+          <Text>
+            We aim to bring educational success with our resources in the
+            comfort of your own home.
+          </Text>
+          <Text mb="8">
+            Have everything that you need at your finger tips. From Mathematics
+            to English, we have the resources to help you.
+          </Text>
           <InputGroup size="lg" maxW="md" mb="10">
             <InputLeftElement
               pointerEvents="none"

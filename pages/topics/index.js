@@ -54,7 +54,9 @@ export default function Home() {
           pt="24"
           pb="40"
         >
-          <Heading mb="8">Course Topics</Heading>
+          <Heading mb="8" as="h1" size="2xl">
+            Course Topics
+          </Heading>
           <InputGroup size="lg" maxW="md" mb="10">
             <InputLeftElement
               pointerEvents="none"

@@ -35,18 +35,14 @@ export default function About() {
           pt="24"
           pb="40"
         >
-          <Heading mb="8">About Us</Heading>
-          <Text>
+          <Heading as="h1" size="2xl" mb="8">
+            About Us
+          </Heading>
+          <Text mb="8" align="center">
             Home Edvantage is the place to get easy and convenient resources to
-            work from home.
-          </Text>
-          <Text>
-            We aim to provide an affordable and accessible Education at your
-            fingertips.
-          </Text>
-          <Text mb="8">
-            We have resources that would help supplement your learning or
-            teaching, no matter who you are!
+            work from home. We aim to provide an affordable and accessible
+            Education at your fingertips. We have resources that would help
+            supplement your learning or teaching, no matter who you are!
           </Text>
           <SimpleGrid columns={[1, null, null, 3]} spacing="8" w="full">
             <AboutCard heading="Our Story">
