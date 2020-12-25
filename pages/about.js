@@ -27,7 +27,7 @@ export default function About() {
     <main>
       <Box>
         <Container
-          maxW="xl"
+          maxW="container.xl"
           d="flex"
           flexDirection="column"
           alignItems="center"
@@ -36,6 +36,18 @@ export default function About() {
           pb="40"
         >
           <Heading mb="8">About Us</Heading>
+          <Text>
+            Home Edvantage is the place to get easy and convenient resources to
+            work from home.
+          </Text>
+          <Text>
+            We aim to provide an affordable and accessible Education at your
+            fingertips.
+          </Text>
+          <Text mb="8">
+            We have resources that would help supplement your learning or
+            teaching, no matter who you are!
+          </Text>
           <SimpleGrid columns={[1, null, null, 3]} spacing="8" w="full">
             <AboutCard heading="Our Story">
               <Text>

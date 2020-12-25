@@ -65,7 +65,7 @@ export default function Category({ categoryName }) {
   return (
     <Box as="main">
       <Container
-        maxW="xl"
+        maxW="container.xl"
         d="flex"
         flexDirection="column"
         alignItems="center"

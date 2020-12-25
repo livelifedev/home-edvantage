@@ -24,7 +24,7 @@ function SingleNavLink({ name, href }) {
 export default function Nav() {
   return (
     <Box as="nav" boxShadow="base" py="2" pos="relative">
-      <Container maxW="xl" d="flex" h="24" alignItems="center">
+      <Container maxW="container.xl" d="flex" h="24" alignItems="center">
         <NextLink href="/" passHref>
           <Link>
             <Image

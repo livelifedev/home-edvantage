@@ -31,7 +31,7 @@ export default function Course({ course }) {
   return (
     <Box as="main">
       <Container
-        maxW="xl"
+        maxW="container.xl"
         d="flex"
         flexDirection="column"
         alignItems="center"

@@ -5,7 +5,7 @@ export default function About() {
     <main>
       <Box>
         <Container
-          maxW="xl"
+          maxW="container.xl"
           d="flex"
           flexDirection="column"
           alignItems="center"

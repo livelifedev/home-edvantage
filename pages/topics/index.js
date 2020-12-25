@@ -21,7 +21,7 @@ function CategoryCard({ name, href, description }) {
     <Box borderWidth="1px" borderRadius="md" overflow="hidden" w="full">
       <Flex direction={["column", null, "row"]}>
         <Box bg="gray.200" h="60" w={["full", null, 80]} flexShrink="0" />
-        <Box py="8" px="4" pos="relative" h="60">
+        <Box py={[4, null, null, 8]} px="4" pos="relative" h={[72, 60]}>
           <NextLink href={`/topics/${href}`} passHref>
             <Link color="blue.600">
               <Heading as="h3" size="lg" pb="4">
@@ -46,7 +46,7 @@ export default function Home() {
     <main>
       <Box>
         <Container
-          maxW="xl"
+          maxW="container.xl"
           d="flex"
           flexDirection="column"
           alignItems="center"

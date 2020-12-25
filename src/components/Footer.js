@@ -19,7 +19,7 @@ function SingleFooterLink({ name, href }) {
 export default function Footer() {
   return (
     <Box as="footer" borderTop="1px" borderColor="gray.100">
-      <Container maxW="xl">
+      <Container maxW="container.xl">
         <Heading as="h5" size="sm" textTransform="uppercase" pt="14" pb="3">
           Company
         </Heading>

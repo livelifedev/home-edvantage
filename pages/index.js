@@ -34,7 +34,7 @@ export default function Courses() {
     <main>
       <Box bg="blue.600">
         <Container
-          maxW="xl"
+          maxW="container.xl"
           h="sm"
           d="flex"
           flexDirection="column"
@@ -50,7 +50,7 @@ export default function Courses() {
 
       <Box>
         <Container
-          maxW="xl"
+          maxW="container.xl"
           d="flex"
           flexDirection="column"
           alignItems="center"
