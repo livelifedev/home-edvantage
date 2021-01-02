@@ -76,7 +76,7 @@ export default function Category({ categoryName }) {
         <Breadcrumb
           color="blue.600"
           w="full"
-          pb="16"
+          pb={[8, 16]}
           separator={<Icon as={BsChevronRight} pb="1" />}
         >
           <BreadcrumbItem>

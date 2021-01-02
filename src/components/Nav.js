@@ -52,12 +52,16 @@ export default function Nav() {
           <SingleNavLink name="Blog" href="/" />
         </Box>
         <ButtonGroup spacing="1" d={["none", null, null, "inline-flex"]}>
-          <Button variant="outline" px="8" colorScheme="yellow">
-            Log in
-          </Button>
-          <Button px="8" colorScheme="yellow">
-            Register
-          </Button>
+          <NextLink href="/login" passHref>
+            <Button variant="outline" px="8" colorScheme="yellow" as="a">
+              Log in
+            </Button>
+          </NextLink>
+          <NextLink href="/membership" passHref>
+            <Button px="8" colorScheme="yellow" as="a">
+              Register
+            </Button>
+          </NextLink>
         </ButtonGroup>
 
         <IconButton

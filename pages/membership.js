@@ -14,7 +14,7 @@ export default function About() {
           pb="40"
         >
           <Heading as="h1" size="2xl" mb="8">
-            Membership
+            Become a Member
           </Heading>
         </Container>
       </Box>

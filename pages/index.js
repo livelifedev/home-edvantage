@@ -49,7 +49,9 @@ export default function Courses() {
           <Text color="white" fontWeight="semibold" mb="8">
             “The place for students to learn, excel and succeed!”
           </Text>
-          <Button>Get Started</Button>
+          <NextLink href="/membership" passHref>
+            <Button as="a">Get Started</Button>
+          </NextLink>
         </Container>
       </Box>
 
