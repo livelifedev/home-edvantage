@@ -5,9 +5,19 @@ import {
   Button,
   ButtonGroup,
   Container,
+  Divider,
+  Drawer,
+  DrawerBody,
+  DrawerFooter,
+  DrawerHeader,
+  DrawerOverlay,
+  DrawerContent,
+  DrawerCloseButton,
   IconButton,
   Link,
   Spacer,
+  useDisclosure,
+  VStack,
 } from "@chakra-ui/react";
 import { AiOutlineMenu } from "react-icons/ai";
 
@@ -22,6 +32,8 @@ function SingleNavLink({ name, href }) {
 }
 
 export default function Nav() {
+  const { isOpen, onOpen, onClose } = useDisclosure();
+
   return (
     <Box as="nav" boxShadow="base" py="2" pos="relative">
       <Container maxW="container.xl" d="flex" h="24" alignItems="center">
@@ -71,8 +83,35 @@ export default function Nav() {
           size="lg"
           variant="outline"
           d={["inline-flex", null, null, "none"]}
+          onClick={onOpen}
         />
       </Container>
+
+      <Drawer placement="right" onClose={onClose} isOpen={isOpen}>
+        <DrawerOverlay>
+          <DrawerContent>
+            <DrawerCloseButton />
+            <DrawerHeader />
+            <DrawerBody>
+              <VStack
+                fontWeight="bold"
+                fontSize="lg"
+                letterSpacing="wide"
+                spacing="24px"
+              >
+                <SingleNavLink name="Home" href="/" />
+                <SingleNavLink name="About" href="/about" />
+                <SingleNavLink name="Courses" href="/topics" />
+                <SingleNavLink name="Membership" href="/membership" />
+                <SingleNavLink name="Blog" href="/" />
+                <Divider />
+                <SingleNavLink name="Log in" href="/login" />
+                <SingleNavLink name="Register" href="/membership" />
+              </VStack>
+            </DrawerBody>
+          </DrawerContent>
+        </DrawerOverlay>
+      </Drawer>
     </Box>
   );
 }
