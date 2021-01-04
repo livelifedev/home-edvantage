@@ -21,10 +21,10 @@ import {
 } from "@chakra-ui/react";
 import { AiOutlineMenu } from "react-icons/ai";
 
-function SingleNavLink({ name, href }) {
+function SingleNavLink({ name, href, onClick }) {
   return (
     <NextLink href={href} passHref>
-      <Link color="blue.600" px="3">
+      <Link color="blue.600" px="3" onClick={onClick}>
         {name}
       </Link>
     </NextLink>
@@ -99,14 +99,26 @@ export default function Nav() {
                 letterSpacing="wide"
                 spacing="24px"
               >
-                <SingleNavLink name="Home" href="/" />
-                <SingleNavLink name="About" href="/about" />
-                <SingleNavLink name="Courses" href="/topics" />
-                <SingleNavLink name="Membership" href="/membership" />
-                <SingleNavLink name="Blog" href="/" />
+                <SingleNavLink name="Home" href="/" onClick={onClose} />
+                <SingleNavLink name="About" href="/about" onClick={onClose} />
+                <SingleNavLink
+                  name="Courses"
+                  href="/topics"
+                  onClick={onClose}
+                />
+                <SingleNavLink
+                  name="Membership"
+                  href="/membership"
+                  onClick={onClose}
+                />
+                <SingleNavLink name="Blog" href="/" onClick={onClose} />
                 <Divider />
-                <SingleNavLink name="Log in" href="/login" />
-                <SingleNavLink name="Register" href="/membership" />
+                <SingleNavLink name="Log in" href="/login" onClick={onClose} />
+                <SingleNavLink
+                  name="Register"
+                  href="/membership"
+                  onClick={onClose}
+                />
               </VStack>
             </DrawerBody>
           </DrawerContent>
