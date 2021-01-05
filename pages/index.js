@@ -3,6 +3,7 @@ import {
   Box,
   Button,
   Container,
+  Divider,
   Heading,
   Icon,
   Input,
@@ -87,6 +88,15 @@ export default function Courses() {
               <CategoryCard name={x.name} href={x.id} key={x.id} />
             ))}
           </SimpleGrid>
+
+          <Divider my="24" />
+
+          <Heading mb="8">Register Now for Free Access</Heading>
+          <NextLink href="/membership" passHref>
+            <Button as="a" colorScheme="blue">
+              Get Started
+            </Button>
+          </NextLink>
         </Container>
       </Box>
     </main>
