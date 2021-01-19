@@ -4,6 +4,8 @@ import {
   Button,
   Container,
   Flex,
+  Grid,
+  GridItem,
   Heading,
   Icon,
   Input,
@@ -20,22 +22,26 @@ function CategoryCard({ name, href, description }) {
   return (
     <Box borderWidth="1px" borderRadius="md" overflow="hidden" w="full">
       <Flex direction={["column", null, "row"]}>
-        <Box bg="gray.200" h="60" w={["full", null, 80]} flexShrink="0" />
-        <Box py={[4, null, null, 8]} px="4" pos="relative" h={[72, 60]}>
-          <NextLink href={`/topics/${href}`} passHref>
-            <Link color="blue.600">
-              <Heading as="h3" size="lg" pb="4">
-                {name}
-              </Heading>
-            </Link>
-          </NextLink>
+        <Box bg="gray.200" minH="60" w={["full", null, 80]} flexShrink="0" />
+        <Grid templateRows="auto 1fr auto" py="8" px="4">
+          <GridItem mb="4">
+            <NextLink href={`/topics/${href}`} passHref>
+              <Link color="blue.600">
+                <Heading as="h3" size="lg">
+                  {name}
+                </Heading>
+              </Link>
+            </NextLink>
+          </GridItem>
           <Text color="gray.500">{description}</Text>
-          <NextLink href={`/topics/${href}`} passHref>
-            <Button colorScheme="blue" pos="absolute" bottom="8" as="a">
-              Browse Courses
-            </Button>
-          </NextLink>
-        </Box>
+          <GridItem mt="4">
+            <NextLink href={`/topics/${href}`} passHref>
+              <Button colorScheme="blue" as="a">
+                Browse Courses
+              </Button>
+            </NextLink>
+          </GridItem>
+        </Grid>
       </Flex>
     </Box>
   );
