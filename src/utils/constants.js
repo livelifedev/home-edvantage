@@ -52,6 +52,6 @@ export const CATEGORIES = [
 export const COURSES = Array.from({ length: 5 }, (v, i) => ({
   name: `Course ${i + 1}`,
   id: i.toString(),
-  tags: ["Core Skills", "Maths", "Maths", "Maths", "Maths"],
+  tags: ["Core Skills", "Maths", "Maths", "Maths", "Maths", "Core Skills"],
   category: CATEGORIES[0],
 }));
