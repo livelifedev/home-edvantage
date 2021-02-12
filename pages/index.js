@@ -9,27 +9,10 @@ import {
   Input,
   InputGroup,
   InputLeftElement,
-  Link,
-  SimpleGrid,
   Text,
 } from "@chakra-ui/react";
 import { BsSearch } from "react-icons/bs";
-import { CATEGORIES } from "../src/utils/constants";
-
-function CategoryCard({ name, href }) {
-  return (
-    <Box borderWidth="1px" borderRadius="md" overflow="hidden">
-      <NextLink href={`/topics/${href}`} passHref>
-        <Link color="blue.600">
-          <Box bg="gray.200" w="full" h="48" />
-          <Heading as="h5" size="sm" align="center" py="4" px="2">
-            {name}
-          </Heading>
-        </Link>
-      </NextLink>
-    </Box>
-  );
-}
+import { TopicsGrid } from "../src/components/Topics";
 
 export default function Courses() {
   return (
@@ -83,11 +66,7 @@ export default function Courses() {
             />
             <Input type="search" placeholder="Search all courses" />
           </InputGroup>
-          <SimpleGrid columns={[1, 2, 3, 4]} spacing="4" w="full">
-            {CATEGORIES.map((x) => (
-              <CategoryCard name={x.name} href={x.id} key={x.id} />
-            ))}
-          </SimpleGrid>
+          <TopicsGrid />
 
           <Divider my="24" />
 
