@@ -1,5 +1,9 @@
 import { gql, useQuery } from "@apollo/client";
+import NextLink from "next/link";
 import {
+  Breadcrumb,
+  BreadcrumbItem,
+  BreadcrumbLink,
   Divider,
   Flex,
   Heading,
@@ -11,7 +15,8 @@ import {
   SimpleGrid,
   Text,
 } from "@chakra-ui/react";
-import { BsSearch } from "react-icons/bs";
+import { BsChevronRight, BsSearch } from "react-icons/bs";
+import Loading from "./Loading";
 import Course from "./Course";
 
 const ALL_TOPIC_COURSES_QUERY = gql`
@@ -32,10 +37,27 @@ export default function TopicCourses({ id }) {
     variables: { id },
   });
 
-  if (loading) return <div>Loading...</div>;
+  if (loading) return <Loading />;
   if (error) return <div>{error.message}</div>;
   return (
     <>
+      <Breadcrumb
+        color="blue.600"
+        w="full"
+        pb={[8, 16]}
+        separator={<Icon as={BsChevronRight} pb="1" />}
+      >
+        <BreadcrumbItem>
+          <NextLink href="/topics" passHref>
+            <BreadcrumbLink>Topics</BreadcrumbLink>
+          </NextLink>
+        </BreadcrumbItem>
+
+        <BreadcrumbItem isCurrentPage>
+          <BreadcrumbLink>Current</BreadcrumbLink>
+        </BreadcrumbItem>
+      </Breadcrumb>
+
       <Heading mb="8">{data.Topic.name}</Heading>
       <InputGroup size="lg" maxW="md" mb="8">
         <InputLeftElement
@@ -48,7 +70,7 @@ export default function TopicCourses({ id }) {
       <Divider />
 
       <Flex align="center" justify="space-between" w="full" mt="3" mb="6">
-        <Text color="gray.500">Results: {data.Topic.length || 0}</Text>
+        <Text color="gray.500">Results: {data.Topic.courses.length}</Text>
         <Select placeholder="Sort by" w="auto">
           <option value="title-asc">Title (asc)</option>
           <option value="title-desc">Title (desc)</option>
