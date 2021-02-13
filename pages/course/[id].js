@@ -23,7 +23,7 @@ import {
 import { COURSES } from "../../src/utils/constants";
 import { BsChevronRight } from "react-icons/bs";
 
-export default function Course({ course }) {
+export default function CoursePage({ course }) {
   const router = useRouter();
   const { id } = router.query;
   console.log(router, id);
@@ -80,9 +80,9 @@ export default function Course({ course }) {
             </Heading>
             <Text color="gray.500">
               Lorem Ipsum is simply dummy text of the printing and typesetting
-              industry. Lorem Ipsum has been the industry's standard dummy text
-              ever since the 1500s, when an unknown printer took a galley of
-              type and scrambled it to make a type specimen book.
+              industry. Lorem Ipsum has been the industry&apos;s standard dummy
+              text ever since the 1500s, when an unknown printer took a galley
+              of type and scrambled it to make a type specimen book.
             </Text>
 
             <Divider my="8" />

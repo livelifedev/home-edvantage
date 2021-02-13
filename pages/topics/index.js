@@ -10,7 +10,7 @@ import {
 import { BsSearch } from "react-icons/bs";
 import { TopicsList } from "../../src/components/Topics";
 
-export default function Home() {
+export default function TopicsPage() {
   return (
     <main>
       <Box>

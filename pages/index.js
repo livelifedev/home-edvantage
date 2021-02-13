@@ -14,7 +14,7 @@ import {
 import { BsSearch } from "react-icons/bs";
 import { TopicsGrid } from "../src/components/Topics";
 
-export default function Courses() {
+export default function HomePage() {
   return (
     <main>
       <Box bg="blue.600">

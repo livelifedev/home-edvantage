@@ -12,7 +12,7 @@ import {
   Text,
 } from "@chakra-ui/react";
 
-export default function Login() {
+export default function LoginPage() {
   return (
     <main>
       <Box>

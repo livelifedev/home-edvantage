@@ -22,7 +22,7 @@ function AboutCard({ heading, children }) {
   );
 }
 
-export default function About() {
+export default function AboutPage() {
   return (
     <main>
       <Box>
