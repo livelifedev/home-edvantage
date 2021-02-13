@@ -13,10 +13,10 @@ export default function Course({ name, href, tags }) {
         </Link>
       </NextLink>
       <Wrap p="2" d="flex" alignItems="center">
-        {tags.map((tag, i) => (
-          <WrapItem key={i}>
+        {tags.map((tag) => (
+          <WrapItem key={tag.name}>
             <Tag variant="subtle" colorScheme="yellow">
-              {tag}
+              {tag.name}
             </Tag>
           </WrapItem>
         ))}

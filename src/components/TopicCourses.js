@@ -27,6 +27,9 @@ const ALL_TOPIC_COURSES_QUERY = gql`
       courses {
         id
         name
+        tags {
+          name
+        }
       }
     }
   }
@@ -82,7 +85,7 @@ export default function TopicCourses({ id }) {
             name={course.name}
             href={course.id}
             key={course.id}
-            tags={[]}
+            tags={course.tags}
           />
         ))}
       </SimpleGrid>

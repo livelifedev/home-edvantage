@@ -31,6 +31,9 @@ const SINGLE_COURSE_QUERY = gql`
       }
       name
       description
+      tags {
+        name
+      }
     }
   }
 `;
@@ -103,26 +106,13 @@ export default function SingleCourse({ id }) {
             Keywords
           </Heading>
           <Wrap>
-            <WrapItem>
-              <Tag variant="subtle" colorScheme="yellow">
-                Core Skills
-              </Tag>
-            </WrapItem>
-            <WrapItem>
-              <Tag variant="subtle" colorScheme="yellow">
-                Algebra
-              </Tag>
-            </WrapItem>
-            <WrapItem>
-              <Tag variant="subtle" colorScheme="yellow">
-                Algebra
-              </Tag>
-            </WrapItem>
-            <WrapItem>
-              <Tag variant="subtle" colorScheme="yellow">
-                Algebra
-              </Tag>
-            </WrapItem>
+            {data.Course.tags.map((tag) => (
+              <WrapItem key={tag.name}>
+                <Tag variant="subtle" colorScheme="yellow">
+                  {tag.name}
+                </Tag>
+              </WrapItem>
+            ))}
           </Wrap>
         </Box>
         <Box w="full" h="md" bg="gray.200">
