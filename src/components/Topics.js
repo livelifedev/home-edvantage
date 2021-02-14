@@ -9,12 +9,6 @@ const ALL_TOPICS_QUERY = gql`
       id
       name
       description
-      photo {
-        id
-        image {
-          publicUrlTransformed
-        }
-      }
       status
     }
   }

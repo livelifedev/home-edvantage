@@ -9,12 +9,6 @@ const ALL_COURSES_QUERY = gql`
       id
       name
       description
-      photo {
-        id
-        image {
-          publicUrlTransformed
-        }
-      }
       status
     }
   }
