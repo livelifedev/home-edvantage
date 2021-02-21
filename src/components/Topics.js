@@ -21,7 +21,6 @@ const ALL_TOPICS_QUERY = gql`
 
 export const TopicsGrid = () => {
   const { data, error, loading } = useQuery(ALL_TOPICS_QUERY);
-  console.log("api grid", loading, data);
 
   if (loading) return <Loading />;
   if (error) return <div>{error.message}</div>;
@@ -41,7 +40,6 @@ export const TopicsGrid = () => {
 
 export const TopicsList = () => {
   const { data, error, loading } = useQuery(ALL_TOPICS_QUERY);
-  console.log("api list", loading, data);
 
   if (loading) return <Loading />;
   if (error) return <div>{error.message}</div>;

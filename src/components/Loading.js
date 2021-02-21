@@ -1,15 +1,42 @@
 import { Box, Spinner } from "@chakra-ui/react";
 
-export default function Loading() {
+function Loader() {
   return (
-    <Box py="4" px="2">
-      <Spinner
-        thickness="4px"
-        speed="0.65s"
-        emptyColor="gray.200"
-        color="blue.500"
-        size="xl"
-      />
+    <Spinner
+      thickness="4px"
+      speed="0.65s"
+      emptyColor="gray.200"
+      color="blue.500"
+      size="xl"
+    />
+  );
+}
+
+export default function Loading({ full }) {
+  if (full)
+    return (
+      <Box
+        d="flex"
+        alignItems="center"
+        justifyContent="center"
+        h="100vh"
+        w="full"
+        mt="-112px"
+      >
+        <Loader />
+      </Box>
+    );
+
+  return (
+    <Box
+      d="flex"
+      alignItems="center"
+      justifyContent="center"
+      h="full"
+      w="full"
+      py="8"
+    >
+      <Loader />
     </Box>
   );
 }

@@ -66,6 +66,7 @@ export default function HomePage() {
             />
             <Input type="search" placeholder="Search all courses" />
           </InputGroup>
+
           <TopicsGrid />
 
           <Divider my="24" />

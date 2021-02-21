@@ -7,7 +7,7 @@ import Nav from "../src/components/Nav";
 import Footer from "../src/components/Footer";
 
 import "../styles/nprogress.css";
-// import "../styles/styles.css";
+import "../styles/styles.css";
 
 Router.events.on("routeChangeStart", () => NProgress.start());
 Router.events.on("routeChangeComplete", () => NProgress.done());
