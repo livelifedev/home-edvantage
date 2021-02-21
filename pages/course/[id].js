@@ -29,9 +29,25 @@ const SINGLE_COURSE_QUERY = gql`
       tags {
         name
       }
+      photo {
+        image {
+          publicUrlTransformed
+        }
+      }
+      product {
+        file {
+          publicUrl
+        }
+      }
     }
   }
 `;
+
+function download(courseFile) {
+  if (courseFile) {
+    window.open(courseFile.file.publicUrl);
+  }
+}
 
 export default function CoursePage({ query }) {
   const { data, error, loading } = useQuery(SINGLE_COURSE_QUERY, {
@@ -74,7 +90,11 @@ export default function CoursePage({ query }) {
 
         <Flex justify="space-between" w="full" wrap={["wrap", null, "nowrap"]}>
           <Heading mb={[2, null, 0]}>{data.Course.name}</Heading>
-          <Button colorScheme="blue" ml={[0, null, 2]}>
+          <Button
+            colorScheme="blue"
+            ml={[0, null, 2]}
+            onClick={() => download(data.Course.product)}
+          >
             Get Course
           </Button>
         </Flex>

@@ -2,6 +2,7 @@ import {
   Box,
   Divider,
   Heading,
+  Image,
   ListItem,
   SimpleGrid,
   Tag,
@@ -52,13 +53,14 @@ export default function SingleCourse({ data }) {
             ))}
           </Wrap>
         </Box>
-        <Box w="full" h="md" bg="gray.200">
-          {/* <Image
-              src="/me.png"
-              alt="Picture of the author"
-              width={500}
-              height={500}
-            /> */}
+        <Box w="full" h="md">
+          {data.Course.photo?.image?.publicUrlTransformed && (
+            <Image
+              src={data.Course.photo.image.publicUrlTransformed}
+              maxH="full"
+              maxW="full"
+            />
+          )}
         </Box>
       </SimpleGrid>
     </>
