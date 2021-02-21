@@ -10,6 +10,11 @@ const ALL_TOPICS_QUERY = gql`
       name
       description
       status
+      photo {
+        image {
+          publicUrlTransformed
+        }
+      }
     }
   }
 `;
@@ -23,7 +28,12 @@ export const TopicsGrid = () => {
   return (
     <SimpleGrid columns={[1, 2, 3, 4]} spacing="4" w="full">
       {data.allTopics.map((topic) => (
-        <TopicGridItem name={topic.name} href={topic.id} key={topic.id} />
+        <TopicGridItem
+          name={topic.name}
+          href={topic.id}
+          key={topic.id}
+          src={topic.photo?.image?.publicUrlTransformed}
+        />
       ))}
     </SimpleGrid>
   );
@@ -43,6 +53,7 @@ export const TopicsList = () => {
           href={topic.id}
           key={topic.id}
           description={topic.description}
+          src={topic.photo?.image?.publicUrlTransformed}
         />
       ))}
     </VStack>

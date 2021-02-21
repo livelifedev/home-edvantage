@@ -15,7 +15,7 @@ export const CATEGORIES = [
     name: "Solving Equations",
     id: "solving-equations",
     description:
-      "Learn the fundamental techniques in solving unknowns in any given equation. ",
+      "Learn the fundamental techniques in solving unknowns in any given equation.",
   },
   {
     name: "Sketching Functions",
@@ -33,7 +33,7 @@ export const CATEGORIES = [
     name: "Understanding Calculus",
     id: "understanding-calculus",
     description:
-      "Get the right head start you need from now til the end. Calculus doesn’t have to be as hard as it sound.",
+      "Get the right head start you need from now til the end. Calculus doesn't have to be as hard as it sound.",
   },
   {
     name: "Selective Placement Training",
