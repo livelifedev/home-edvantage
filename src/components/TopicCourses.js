@@ -14,6 +14,7 @@ export default function TopicCourses({ data, error, loading }) {
             href={course.id}
             key={course.id}
             tags={course.tags}
+            src={course.photo?.image?.publicUrlTransformed}
           />
         ))}
       </SimpleGrid>

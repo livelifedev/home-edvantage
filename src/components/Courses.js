@@ -10,6 +10,11 @@ const ALL_COURSES_QUERY = gql`
       name
       description
       status
+      photo {
+        image {
+          publicUrlTransformed
+        }
+      }
     }
   }
 `;

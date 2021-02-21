@@ -31,6 +31,11 @@ const ALL_TOPIC_COURSES_QUERY = gql`
         tags {
           name
         }
+        photo {
+          image {
+            publicUrlTransformed
+          }
+        }
       }
     }
   }
