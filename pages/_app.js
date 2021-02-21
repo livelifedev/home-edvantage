@@ -3,8 +3,6 @@ import withData from "../src/utils/withData";
 import { ChakraProvider } from "@chakra-ui/react";
 import Nav from "../src/components/Nav";
 import Footer from "../src/components/Footer";
-
-import "../styles/nprogress.css";
 import "../styles/styles.css";
 
 function MyApp({ Component, pageProps, apollo }) {
